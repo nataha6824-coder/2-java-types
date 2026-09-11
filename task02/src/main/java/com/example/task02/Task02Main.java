@@ -4,18 +4,25 @@ public class Task02Main {
 
     public static String solution(String input) {
 
-        // TODO напишите здесь свою корректную реализацию этого метода, вместо сеществующей
+        long digital = Long.parseLong(input);
 
+        if (digital >= -128 & digital <= 127) {
+            return "byte";
+        } else if (digital >= (-2L << 14) & digital <= (2L << 14) - 1) {
+            return "short";
+        } else if (digital >= -(2L << 30) & digital <= (2L << 30) - 1) {
+            return "int";
+        } else if (digital >= -2L << 62 & digital <= (2L << 62) - 1) {
+            return "long";
+        }
         return "";
     }
 
     public static void main(String[] args) {
-        // Здесь вы можете вручную протестировать ваше решение, вызывая реализуемый метод и смотря результат
-        // например вот так:
-        /*
+
         String result = solution("12345");
         System.out.println(result);
-         */
+
     }
 
 }
